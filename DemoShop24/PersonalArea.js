@@ -16,17 +16,16 @@ fixture`User Registration`
     .page`http://demoshop24.com`;
 
 test('should create account', async t => {
-    await t.click(accountElem);
-    await t.click(registerLink);
-        
+    await t.click(accountElem)
+        .click(registerLink);
 
-    await t.typeText(name, "Alex");
-    await t.typeText(lastName, "Arb");
-    await t.typeText(mail, "test@email.com");
-    await t.typeText(telephone, "+37100000000");
-    await t.typeText(password, "Qwerty123");
-    await t.typeText(passwordConfirmation, "Qwerty123");
-    await t.click(checkboxAgree);
-    await t.click(buttonContinue);
 
+    await t.typeText(name, "Alex")
+        .typeText(lastName, "Arb")
+        .typeText(mail, "test@email.com")
+        .typeText(telephone, "+37100000000")
+        .typeText(password, "Qwerty123")
+        .typeText(passwordConfirmation, "Qwerty123")
+        .click(checkboxAgree)
+        .click(buttonContinue);
 });
