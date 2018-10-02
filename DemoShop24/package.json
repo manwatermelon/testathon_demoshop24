@@ -1,0 +1,12 @@
+{
+  "name": "demo-shop24",
+  "version": "0.0.0",
+  "description": "DemoShop24",
+  "main": "app.js",
+  "author": {
+    "name": "hepo_000"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.87"
+  }
+}
