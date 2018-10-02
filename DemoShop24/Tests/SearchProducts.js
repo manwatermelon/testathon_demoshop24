@@ -23,7 +23,7 @@ var testCases = [
 ];
 
 for (const testCase of testCases) {
-	const testName = 'serch is visible on page '+testCase.name;
+	const testName = 'search is visible on page '+testCase.name;
     const url = 'http://demoshop24.com/index.php?route='+testCase.path;
     
 	test(testName, async t => {
