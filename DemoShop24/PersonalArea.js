@@ -1,5 +1,8 @@
 import { Selector } from 'testcafe';
 
+const accountElem = Selector('#top-links > ul > li.dropdown');
+const registerLink = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
+
 const name = Selector('#input-firstname');
 const lastName = Selector('#input-lastname');
 const mail = Selector('#input-email');
@@ -13,8 +16,9 @@ fixture`User Registration`
     .page`http://demoshop24.com`;
 
 test('should create account', async t => {
-    await t
-        .navigateTo('http://demoshop24.com/index.php?route=account/register');
+    await t.click(accountElem);
+    await t.click(registerLink);
+        
 
     await t.typeText(name, "Alex");
     await t.typeText(lastName, "Arb");
