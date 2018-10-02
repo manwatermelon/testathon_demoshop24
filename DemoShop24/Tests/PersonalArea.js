@@ -1,10 +1,19 @@
 import {user_NOK} from "./mocks/user.mocks";
 import RegistrationPage from 'pages/registrationPage';
+import PageHeader from "./pages/pageHeader";
 
+const pageHeader = new PageHeader();
 const page = new RegistrationPage();
 
 fixture`User Registration`
-    .page`http://demoshop24.com/index.php?route=account/register`;
+    .page`http://demoshop24.com/`
+    .beforeEach(
+        async t => {
+            await t
+                .click(pageHeader.myAccountElement)
+                .click(pageHeader.registerElement);
+        }
+    );
 
 test('should have mandatory fields', async t => {
     await t

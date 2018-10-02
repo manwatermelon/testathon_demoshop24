@@ -1,28 +1,20 @@
 import { Selector } from 'testcafe';
 
-const accountElem = Selector('#top-links > ul > li.dropdown');
-const registerLink = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
-const loginElem = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(2) > a');
+// const accountElem = Selector('#top-links > ul > li.dropdown');
+// const registerLink = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
+// const loginElem = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(2) > a');
 
-const name = Selector('#input-firstname');
-const lastName = Selector('#input-lastname');
-const mail = Selector('#input-email');
-const telephone = Selector('#input-telephone');
-const password = Selector('#input-password');
-const passwordConfirmation = Selector('#input-confirm');
-const checkboxAgree = Selector('*').withAttribute('name', 'agree');
-const buttonContinue = Selector('input[type=submit]').filter(node => node.value = "Continue");
-const emailLoginElem = Selector('#input-email');
-const passwordLoginElem = Selector('#input-password');
-const buttonLogin = Selector('input[type=submit]').filter(node => node.value = "Login");
-const myAccountElem = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
-const editProfileElem = Selector('#content > ul:nth-child(2) > li:nth-child(1) > a');
+// const emailLoginElem = Selector('#input-email');
+// const passwordLoginElem = Selector('#input-password');
+// const buttonLogin = Selector('input[type=submit]').filter(node => node.value = "Login");
+// const myAccountElem = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
+// const editProfileElem = Selector('#content > ul:nth-child(2) > li:nth-child(1) > a');
 
-const mailVal = 'test7@email.com';
-const passwordVal = 'Qwerty123';
-const nameVal = 'Alex';
-const lastNameVal = 'Arb';
-const telephoneVal = '+37100000000';
+// const mailVal = 'test7@email.com';
+// const passwordVal = 'Qwerty123';
+// const nameVal = 'Alex';
+// const lastNameVal = 'Arb';
+// const telephoneVal = '+37100000000';
 
 fixture`User Registration`
     .page`http://demoshop24.com`;
