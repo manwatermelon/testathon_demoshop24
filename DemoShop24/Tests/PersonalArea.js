@@ -1,5 +1,6 @@
-import {user_NOK} from "./mocks/user.mocks";
-import RegistrationPage from 'pages/registrationPage';
+import { user_NOK } from "./mocks/user.mocks";
+import { user_OK } from "./mocks/user.mocks";
+import RegistrationPage from './pages/registrationPage';
 import PageHeader from "./pages/pageHeader";
 import { Selector } from 'testcafe';
 
