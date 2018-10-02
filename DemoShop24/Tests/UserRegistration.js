@@ -16,11 +16,14 @@ fixture`User Registration`
                 .click(pageHeader.registerElement);
         });
 
-test('should have mandatory fields', async t => {
+test('should have mandatory field validations messages', async t => {
     await t
         .click(page.continueButton);
-
-    await t.expect(Selector('.text-danger').count > 0);
+    await t.expect(page.nameInput.sibling(0).textContent).eql("First Name must be between 1 and 32 characters!");
+    await t.expect(page.lastNameInput.sibling(0).textContent).eql("Last Name must be between 1 and 32 characters!");
+    await t.expect(page.mailInput.sibling(0).textContent).eql("E-Mail Address does not appear to be valid!");
+    await t.expect(page.telephoneInput.sibling(0).textContent).eql("Telephone must be between 7 and 32 characters!");
+    await t.expect(page.passwordInput.sibling(0).textContent).eql("Password must be between 4 and 20 characters!");
 });
 
 test('should validate password equality', async t => {
