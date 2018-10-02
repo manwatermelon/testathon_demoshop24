@@ -9,5 +9,6 @@ export default class RegistrationPage {
         this.passwordInput = Selector('#input-password');
         this.passwordConfirmationInput = Selector('#input-confirm');
         this.confirmCheckbox = Selector('*').withAttribute('agree');
+        this.continueButton = Selector('input[type=submit]').filter(node => node.value = "Continue");
     }
 }
