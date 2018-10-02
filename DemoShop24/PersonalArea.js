@@ -6,7 +6,8 @@ const mail = Selector('#input-email');
 const telephone = Selector('#input-telephone');
 const password = Selector('#input-password');
 const passwordConfirmation = Selector('#input-confirm');
-const checkboxConfirm = Selector('*').withAttribute('agree');
+const checkboxAgree = Selector('*').withAttribute('name', 'agree');
+const buttonContinue = Selector('input[type=submit]').filter(node => node.value = "Continue");
 
 fixture`User Registration`
     .page`http://demoshop24.com`;
@@ -21,6 +22,7 @@ test('should create account', async t => {
     await t.typeText(telephone, "+37100000000");
     await t.typeText(password, "Qwerty123");
     await t.typeText(passwordConfirmation, "Qwerty123");
-    await t.click(checkboxConfirm);
+    await t.click(checkboxAgree);
+    await t.click(buttonContinue);
 
 });
