@@ -33,6 +33,6 @@ test('should validate password equality', async t => {
         .typeText(page.passwordConfirmationInput, '1')
         .click(page.confirmCheckbox)
         .click(page.continueButton);
-    const passwordWarningElem = page.passwordConfirmationInput.nextSibling(Selector('.text-danger'));
-    await t.expect(passwordWarningElem.innerHTML).eql('Password confirmation does not match password!');
+    const passwordWarningText = Selector('#content > form > fieldset:nth-child(2) > div.form-group.required.has-error > div > div').textContent;
+    await t.expect(passwordWarningText).eql('Password confirmation does not match password!');
 });
