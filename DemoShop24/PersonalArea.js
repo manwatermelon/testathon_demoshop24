@@ -15,10 +15,14 @@ const buttonContinue = Selector('input[type=submit]').filter(node => node.value 
 const emailLoginElem = Selector('#input-email');
 const passwordLoginElem = Selector('#input-password');
 const buttonLogin = Selector('input[type=submit]').filter(node => node.value = "Login");
+const myAccountElem = Selector('#top-links > ul > li.dropdown.open > ul > li:nth-child(1) > a');
+const editProfileElem = Selector('#content > ul:nth-child(2) > li:nth-child(1) > a');
 
-
-const mailVal = 'test1@email.com';
+const mailVal = 'test7@email.com';
 const passwordVal = 'Qwerty123';
+const nameVal = 'Alex';
+const lastNameVal = 'Arb';
+const telephoneVal = '+37100000000';
 
 fixture`User Registration`
     .page`http://demoshop24.com`;
@@ -29,19 +33,22 @@ test('should create account', async t => {
         .click(registerLink);
 
     //fill in fields
-    await t.typeText(name, "Alex")
-        .typeText(lastName, "Arb")
+    await t.typeText(name, nameVal)
+        .typeText(lastName, lastNameVal)
         .typeText(mail, mailVal)
-        .typeText(telephone, "+37100000000")
+        .typeText(telephone, telephoneVal)
         .typeText(password, passwordVal)
         .typeText(passwordConfirmation, passwordVal)
         .click(checkboxAgree)
         .click(buttonContinue);
-    //go to login
+    //go to my account
     await t.click(accountElem)
-        .click(loginElem);
-    //type in password and login
-    await t.typeText(emailLoginElem, mailVal)
-        .typeText(passwordLoginElem, passwordVal)
-        .click(buttonLogin);
+        .click(myAccountElem);
+    //go to edit account and verify
+    await t.click(editProfileElem);
+    await t.expect(name.value).eql(nameVal);
+    await t.expect(lastName.value).eql(lastNameVal);
+    await t.expect(mail.value).eql(mailVal);
+    await t.expect(telephone.value).eql(telephoneVal);
+
 });
